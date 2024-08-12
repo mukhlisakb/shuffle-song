@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -36,8 +38,23 @@ const songTitleList = [
   "Mendarah - Nadin Amizah",
 ];
 
-class ShuffleSongWidget extends StatelessWidget {
+class ShuffleSongWidget extends StatefulWidget {
   const ShuffleSongWidget({super.key});
+
+  @override
+  State<ShuffleSongWidget> createState() => _ShuffleSongWidgetState();
+}
+
+class _ShuffleSongWidgetState extends State<ShuffleSongWidget> {
+  int _currentIndex = 0;
+
+  void _shuffleSong() {
+    Random random = Random();
+    int randomIndex = random.nextInt(6);
+    setState(() {
+      _currentIndex = randomIndex;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,14 +96,14 @@ class ShuffleSongWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.asset(
-                      "assets/images/hindia.jpeg",
+                      albumCoverList[_currentIndex],
                       width: 140,
                       height: 140,
                     ),
                     const SizedBox(height: 12),
-                    const Text(
-                      "Kita ke sana - Hindia",
-                      style: TextStyle(
+                    Text(
+                      songTitleList[_currentIndex],
+                      style: const TextStyle(
                         fontSize: 14,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -97,10 +114,13 @@ class ShuffleSongWidget extends StatelessWidget {
                 ),
               ),
             ),
-            Icon(
-              Icons.bookmark_add_rounded,
-              color: Colors.blue,
-              size: 48,
+            GestureDetector(
+              onTap: _shuffleSong,
+              child: const Icon(
+                Icons.arrow_circle_right_rounded,
+                color: Colors.blue,
+                size: 48,
+              ),
             )
           ],
         ),

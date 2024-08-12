@@ -114,14 +114,16 @@ class _ShuffleSongWidgetState extends State<ShuffleSongWidget> {
                 ),
               ),
             ),
-            GestureDetector(
-              onTap: _shuffleSong,
-              child: const Icon(
-                Icons.arrow_circle_right_rounded,
-                color: Colors.blue,
-                size: 48,
+            Center(
+              child: IconButton(
+                onPressed: _shuffleSong,
+                icon: const Icon(
+                  Icons.arrow_circle_right_rounded,
+                  color: Colors.blue,
+                  size: 48,
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

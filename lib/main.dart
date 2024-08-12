@@ -18,62 +18,23 @@ class ShuffleSongApp extends StatelessWidget {
   }
 }
 
-class TestSongWidget extends StatelessWidget {
-  const TestSongWidget({super.key});
+const albumCoverList = [
+  "assets/images/bruno_major.jpeg",
+  "assets/images/coldplay.jpeg",
+  "assets/images/hindia.jpeg",
+  "assets/images/honne.jpeg",
+  "assets/images/maroon5.jpeg",
+  "assets/images/nadin_amizah.jpeg",
+];
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  color: Colors.red,
-                  height: 50,
-                  width: 50,
-                ),
-                Container(
-                  color: Colors.blue,
-                  height: 50,
-                  width: 50,
-                ),
-                Container(
-                  color: Colors.green,
-                  height: 50,
-                  width: 50,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  color: Colors.teal,
-                  height: 50,
-                  width: 50,
-                ),
-                Container(
-                  color: Colors.purple,
-                  height: 50,
-                  width: 50,
-                ),
-                Container(
-                  color: Colors.orange,
-                  height: 50,
-                  width: 50,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+const songTitleList = [
+  "Nothing - Bruno Major",
+  "Fix You - Coldplay",
+  "Kita Ke Sana - Hindia",
+  "By My Side - Honne",
+  "Sad - Maroon 5",
+  "Mendarah - Nadin Amizah",
+];
 
 class ShuffleSongWidget extends StatelessWidget {
   const ShuffleSongWidget({super.key});
